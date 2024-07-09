@@ -1,0 +1,8 @@
+# Admin Dashboard Access by Unauthorized User
+ACME_INTERNAL_System
+| where LogLevel == "INFO"
+| where EventDescription == "Access Granted"
+| Where user !in (adminusers)
+| where Resource contains "admin-dashboard"
+| project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
+
