@@ -2,7 +2,7 @@
 # Admin Dashboard Access by Unauthorized User
 # Query Information
 # MITRE ATT&CK Tactic: Credential Access (T1078)
-# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
+# Description: Identifies any accesses to the admin dashboard by users not authorized to do so, helping detect potential account compromises.
 
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
@@ -14,7 +14,7 @@ ACME_INTERNAL_System
 # Admin Dashboard Access by User From Different IP in Short Period
 # Query Information
 # MITRE ATT&CK Tactic: Credential Access (T1078)
-# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
+# Description: where a user accesses the admin dashboard from multiple IP addresses within a short timeframe,  its suggesting possible unauthorized use of credentials.
 
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
@@ -26,7 +26,7 @@ ACME_INTERNAL_System
 # Admin Dashboard Access by User From Unauthorized IP
 # Query Information
 # MITRE ATT&CK Tactic: Credential Access (T1078)
-# Description: An adversary may use stolen credentials to access systems, especially from unusual locations 
+# Description: where accesses to the admin dashboard from IP addresses not considered trusted, indicating potential attempts by adversaries using stolen credentials or unauthorized access attempts.
 
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
