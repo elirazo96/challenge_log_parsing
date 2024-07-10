@@ -1,12 +1,12 @@
 # elirazo96
 # Admin Dashboard Access by Unauthorized User
+# Query Information
+# MITRE ATT&CK Tactic: Credential Access (T1078)
+# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
+
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
 | where Event ID == "Access Granted"
 | Where User !in (adminusers)
 | where Resource contains "admin-dashboard"
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
-
-# Query Information
-# MITRE ATT&CK Tactic: Credential Access (T1078)
-# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
