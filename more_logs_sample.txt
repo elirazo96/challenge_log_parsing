@@ -1,0 +1,16 @@
+#elirazo96
+# Here are some different log samples based on the provided format: [Timestamp] [Log Level] [IP Address] [Event ID] [User] [Resource]
+# These samples demonstrate various log entries with different timestamps, log levels, IP addresses, events, users, and resources.
+
+[2023-02-10T08:15:45] [ERROR] [10.0.0.1] [Login Failed] [User: asmith] [Resource: /login]
+[2023-03-05T14:22:10] [WARN] [172.16.0.20] [Disk Space Low] [User: system] [Resource: /var/log]
+[2023-04-25T09:30:00] [INFO] [192.168.2.15] [File Uploaded] [User: mjones] [Resource: /uploads/report.pdf]
+[2023-04-25T09:30:00] [INFO] [192.168.2.15] [File Uploaded] [User: mjones] [Resource: /uploads/report.pdf]
+[2023-05-12T11:05:30] [DEBUG] [10.1.1.50] [Session Timeout] [User: bthompson] [Resource: /session]
+[2023-06-20T17:45:10] [INFO] [172.16.4.75] [Configuration Changed] [User: admin] [Resource: /settings]
+[2023-07-30T16:20:45] [ERROR] [192.168.3.25] [Access Denied] [User: cbrown] [Resource: /restricted-area]
+[2023-07-30T16:20:45] [ERROR] [192.168.3.25] [Access Denied] [User: cbrown] [Resource: /restricted-area]
+[2023-08-18T13:10:20] [WARN] [10.2.2.100] [High CPU Usage] [User: monitoring] [Resource: /cpu]
+[2023-09-14T19:55:35] [INFO] [192.168.4.55] [Password Changed] [User: ewhite] [Resource: /account-settings]
+[2023-10-02T07:25:50] [DEBUG] [172.16.5.10] [API Call] [User: developer] [Resource: /api/v1/resource]
+[2023-11-22T23:40:05] [INFO] [10.3.3.30] [User Logout] [User: kgonzalez] [Resource: /logout]
