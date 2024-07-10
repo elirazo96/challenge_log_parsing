@@ -1,3 +1,4 @@
+# elirazo96
 # Admin Dashboard Access by Unauthorized User
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
@@ -6,3 +7,6 @@ ACME_INTERNAL_System
 | where Resource contains "admin-dashboard"
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
 
+# Query Information
+# MITRE ATT&CK Tactic: Credential Access (T1078)
+# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
