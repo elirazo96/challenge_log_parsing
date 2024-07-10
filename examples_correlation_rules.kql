@@ -7,7 +7,7 @@
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
 | where Event ID == "Access Granted"
-| Where User !in (adminusers)
+| where User !in (adminusers)
 | where Resource contains "admin-dashboard"
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
 
@@ -19,7 +19,7 @@ ACME_INTERNAL_System
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
 | where Event ID == "Access Granted"
-| Summarize dcount(IP Address),make_set(IP Address) by User, bin(TimeGeneratedd,5h)
+| summarize dcount(IP Address),make_set(IP Address) by User, bin(TimeGeneratedd,5h)
 | where dcount _IP Address >= 2
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
 
@@ -31,5 +31,5 @@ ACME_INTERNAL_System
 ACME_INTERNAL_System
 | where LogLevel == "INFO"
 | where Event ID == "Access Granted"
-| Where IP Address !in (trusted_ip)
+| where IP Address !in (trusted_ip)
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
