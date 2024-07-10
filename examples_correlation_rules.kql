@@ -10,3 +10,26 @@ ACME_INTERNAL_System
 | Where User !in (adminusers)
 | where Resource contains "admin-dashboard"
 | project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
+
+# Admin Dashboard Access by User From Different IP in Short Period
+# Query Information
+# MITRE ATT&CK Tactic: Credential Access (T1078)
+# Description: An adversary may use stolen credentials to access systems, especially from unusual locations
+
+ACME_INTERNAL_System
+| where LogLevel == "INFO"
+| where Event ID == "Access Granted"
+| Summarize dcount(IP Address),make_set(IP Address) by User, bin(TimeGeneratedd,5h)
+| where dcount _IP Address >= 2
+| project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
+
+# Admin Dashboard Access by User From Unauthorized IP
+# Query Information
+# MITRE ATT&CK Tactic: Credential Access (T1078)
+# Description: An adversary may use stolen credentials to access systems, especially from unusual locations 
+
+ACME_INTERNAL_System
+| where LogLevel == "INFO"
+| where Event ID == "Access Granted"
+| Where IP Address !in (trusted_ip)
+| project Timestamp, LogLevel, SourceIP, EventDescription, User, Resource
